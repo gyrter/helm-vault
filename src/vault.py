@@ -51,7 +51,7 @@ def parse_args(args):
     decrypt.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     decrypt.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     decrypt.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    decrypt.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    decrypt.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     decrypt.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
     decrypt.add_argument("-e", "--environment", type=str, help="Allows for secrets to be decoded on a per environment basis")
 
@@ -68,7 +68,7 @@ def parse_args(args):
     view.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     view.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     view.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    view.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    view.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     view.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
 
     # Edit Help
@@ -78,7 +78,7 @@ def parse_args(args):
     edit.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     edit.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     edit.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    edit.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    edit.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     edit.add_argument("-ed", "--editor", help="Editor name. Default: (Linux/MacOS) \"vi\" (Windows) \"notepad\"", const=True, nargs="?")
     edit.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
 
@@ -89,7 +89,7 @@ def parse_args(args):
     install.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     install.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     install.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    install.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    install.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     install.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
     install.add_argument("-e", "--environment", type=str, help="Environment whose secrets to use")
 
@@ -100,7 +100,7 @@ def parse_args(args):
     template.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     template.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     template.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    template.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    template.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     template.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
 
     # Upgrade Help
@@ -110,7 +110,7 @@ def parse_args(args):
     upgrade.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     upgrade.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     upgrade.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    upgrade.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    upgrade.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     upgrade.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
 
     # Lint Help
@@ -120,7 +120,7 @@ def parse_args(args):
     lint.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     lint.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     lint.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    lint.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    lint.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     lint.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
 
     # Diff Help
@@ -130,7 +130,7 @@ def parse_args(args):
     diff.add_argument("-vt", "--vaulttemplate", type=str, help="Substring with path to vault key instead of deliminator. Default: \"VAULT:\"")
     diff.add_argument("-mp", "--mountpoint", type=str, help="The Vault Mount Point Default: \"secret/data\"")
     diff.add_argument("-vp", "--vaultpath", type=str, help="The Vault Path (secret mount location in Vault). Default: \"secret/helm\"")
-    diff.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v1\"")
+    diff.add_argument("-kv", "--kvversion", choices=['v1', 'v2'], type=str, help="The KV Version (v1, v2) Default: \"v2\"")
     diff.add_argument("-v", "--verbose", help="Verbose logs", const=True, nargs="?")
 
     return parser
@@ -155,7 +155,7 @@ class Envs:
         self.vault_path = self.get_env("VAULT_PATH", "vaultpath", "secret/helm")
         self.secret_delim = self.get_env("SECRET_DELIM", "deliminator", "changeme")
         self.secret_template = self.get_env("SECRET_TEMPLATE", "vaulttemplate", "VAULT:")
-        self.kvversion = self.get_env("KVVERSION", "kvversion", "v1")
+        self.kvversion = self.get_env("KVVERSION", "kvversion", "v2")
         self.environment = self.get_env("NONE", "environment", "")
 
         if platform.system() != "Windows":
@@ -259,7 +259,7 @@ class Vault:
                     value = self.client.read(_path)
                     value = value.get("data", {}).get("value")
                 else:
-                    value = self.client.secrets.kv.v2.read_secret_version(path=_path,mount_point=mount_point)
+                    value = self.client.secrets.kv.v2.read_secret_version(path=_path,mount_point=mount_point,raise_on_deleted_version=True)
                     value = value.get("data", {}).get("data", {}).get("value")
                 return value
             else:
